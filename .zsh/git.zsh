@@ -1,3 +1,13 @@
+# 保管
+COMPLATION_DIR=$HOME/.zsh/git-completions
+if [ ! -d $COMPLATION_DIR ]; then
+    mkdir $COMPLATION_DIR
+    # CAUTION 外部サイトを使っているので、動かなくなる可能性あり
+    curl -o $COMPLATION_DIR/git-completion.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
+    curl -o $COMPLATION_DIR/_git https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh
+fi
+fpath=($COMPLATION_DIR $fpath)
+
 # git alias
 alias ga="git add "
 alias gc="git commit -m "
