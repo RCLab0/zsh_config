@@ -2,5 +2,5 @@
 # cd - [tab] で terminal 起動から移動したディレクトリを一望でき、対応する数字を入力することですぐに移動できる
 setopt autopushd
 
-# pushd (dirctory stack) に同じ dirctory を重複させない
+# pushd (directory stack) に同じ directory を重複させない
 setopt pushdignoredups
