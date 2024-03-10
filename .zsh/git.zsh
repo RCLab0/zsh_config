@@ -21,7 +21,7 @@ alias gswc="git switch -c "
 alias gb="git branch "
 alias gbd="git branch -d "
 alias gbD="git branch -D "
-alias gbdm="gb --merged | grep -E 'feature|hotfix' | xargs gbd "
+alias gbdm="gb --merged | grep -E 'feature|hotfix' | xargs git branch -d "
 alias gbrdm="(cat <(git branch -r --merged main) <(git branch -r --merged master)) | grep -E 'origin/feature|origin/hotfix' | awk '{ sub(\"origin/\", \"\") } { print }' | xargs git push origin --delete "
 
 alias gs="git status "
