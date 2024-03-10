@@ -1,0 +1,1 @@
+<!-- TODO: git clone から ~ 以下に配置するまでの shell 用意 -->
