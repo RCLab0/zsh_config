@@ -7,9 +7,6 @@ alias l="ls -CF"
 alias ll="ls -la"
 alias resh="exec $SHELL -l"
 
-# asdf
-. /usr/local/opt/asdf/libexec/asdf.sh
-
 # git current branch 表示
 function check-color {
   for c in {000..255}; do
