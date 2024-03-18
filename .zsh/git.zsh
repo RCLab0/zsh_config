@@ -9,32 +9,39 @@ fi
 fpath=($COMPLATION_DIR $fpath)
 
 # git alias
-alias ga="git add "
-alias gc="git commit -m "
-alias gca="git commit --amend -m "
+alias ga=" git add "
+alias gc=" git commit -m "
+alias gca=" git commit --amend -m "
 
-alias gp="git push "
-alias gpl="git fetch -p && git merge "
-alias gsw="git switch "
-alias gswc="git switch -c "
+alias gp=" git push "
+alias gpl=" git fetch -p &&  git merge "
+alias gsw=" git switch "
+alias gswc=" git switch -c "
 
-alias gb="git branch "
-alias gbd="git branch -d "
-alias gbD="git branch -D "
+alias gb=" git branch "
+alias gbd=" git branch -d "
+alias gbD=" git branch -D "
 alias gbdm="gb --merged | grep -E 'feature|hotfix' | xargs git branch -d "
 alias gbrdm="(cat <(git branch -r --merged main) <(git branch -r --merged master)) | grep -E 'origin/feature|origin/hotfix' | awk '{ sub(\"origin/\", \"\") } { print }' | xargs git push origin --delete "
 
-alias gs="git status "
-alias gcp="git cherry-pick "
-alias gm="git merge "
+alias gs=" git status "
+alias gcp=" git cherry-pick "
+alias gm=" git merge "
 
-alias gd="git diff "
-alias gl="git log -p " # <commit_id..commit_id> / <branch_name>
-alias gld="git log -p --no-merge "
+alias gd=" git diff "
+alias gl=" git log -p " # <commit_id..commit_id> / <branch_name>
+alias gld=" git log -p --no-merge "
+alias gt=" git tag "
 
-# git alias を grep を用いて一覧表示する
-# alias コマンドを使うとコメントが消えるので、コメントも見られるように
-alias git_alias="cat $HOME/.zsh/git.zsh | grep alias | grep git | grep -v grep"
+function gtp {
+    if [ $# -eq 2 ]; then
+        ` git tag -a $1 -m $2 && git push origin $1`
+    elif [ $# -eq 1 ]; then
+        ` git tag $1 && git push origin $1`
+    else
+        echo "Please input tag (and comment) like 'gtp <version_number> \"<comment>\"(optional)'"
+    fi
+}
 
 
 # git current branch 表示
