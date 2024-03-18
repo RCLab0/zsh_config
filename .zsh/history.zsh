@@ -30,5 +30,8 @@ setopt hist_ignore_all_dups
 # history 参照コマンドを履歴として残さない
 setopt hist_no_store
 
+# スペースで始まるコマンド行は履歴として残さない
+setopt hist_ignore_space
+
 # search history の alias
 alias shist="history -i 0 | grep "
