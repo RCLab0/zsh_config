@@ -4,7 +4,7 @@ setopt nolistbeep
 
 # unix command 
 alias l="ls -CF"
-alias ll="ls -la"
+alias ll="ls -la --color"
 alias resh="exec $SHELL -l"
 
 # git current branch 表示
