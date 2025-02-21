@@ -5,4 +5,6 @@ $ cd ./zsh_config
 $ cp ./.zsh/*.zsh ~/.zsh/
 $ cp .zshrc ~/.zshrc
 $ exec $SHELL -l
+$ cd ../
+$ rm -rf ./zsh_config
 ```
