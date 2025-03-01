@@ -1,5 +1,8 @@
 HISTSIZE=10000
 SAVEHIST=10000
+# WSL で HISTFILE が正しく設定されないため明示的に設定
+# WSL 以外の環境では設定しなくても問題ない
+HISTFILE=$(eval echo ~$USER)/.zsh_history
 
 # .zsh_hisroty に追記する設定
 # 複数の zsh を同時に使う時など HISTFILE に上書きせず追加する
