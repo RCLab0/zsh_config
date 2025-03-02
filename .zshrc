@@ -14,13 +14,14 @@ function check-color {
   done
 }
 
+# 保管を有効にする
+# -U: do not override by user defined alias.
+# -z: read by zsh rules.
+autoload -Uz compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
+
 # load seperated config files
 for conf in "$HOME/.zsh/"*.zsh; do
   source "${conf}"
 done
 unset conf
-
-# 保管を有効にする
-# -U: do not override by user defined alias.
-# -z: read by zsh rules.
-autoload -Uz compinit && compinit
